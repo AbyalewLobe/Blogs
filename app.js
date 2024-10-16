@@ -1,9 +1,14 @@
  const express = require('express')
+ const morgan = require('morgan');
  const app = express()
  
  
  //listen for request
  app.listen(3000);
+
+ app.use(morgan('dev'));
+
+ app.use(express.static('public'));
 
 //register view engine
 app.set('view engine', 'ejs');
