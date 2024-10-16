@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>About Us - Blog App</title>
-  <link rel="stylesheet" href="about-styles.css">
-</head>
+  <%- include('./partials/head.ejs') %>
 <body>
     <style>
         * {
@@ -26,13 +20,13 @@ header {
   color: #fff;
   padding: 10px 0;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #333;
 }
 
 .logo {
@@ -54,7 +48,7 @@ nav {
 
 .about-section {
   max-width: 1200px;
-  margin: 40px auto;
+  /* margin: 10px auto ; */
   padding: 20px;
   background-color: #fff;
 }
@@ -96,18 +90,9 @@ footer {
 }
 
     </style>
-  <header>
-    <nav>
-      <div class="logo"><a href="/">My Blog</a></div>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/catagories">Categories</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/blogs/create">New Blog</a></li>
-      </ul>
-    </nav>
-  </header>
+  
+    <%- include('./partials/nav.ejs') %>
+  
 
   <section class="about-section">
     <h1>About Us</h1>
@@ -132,8 +117,6 @@ footer {
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2024 My Blog | All Rights Reserved</p>
-  </footer>
+  <%- include('./partials/footer.ejs') %>
 </body>
 </html>
