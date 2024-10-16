@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create Blog - Blog App</title>
+  <link rel="stylesheet" href="create-blog-styles.css">
+</head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.create-blog-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.create-blog-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.create-blog-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.blog-form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.blog-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.blog-form-container label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.blog-form-container input[type="text"], 
+.blog-form-container textarea, 
+.blog-form-container select, 
+.blog-form-container input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.blog-form-container button {
+  padding: 12px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.blog-form-container button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+    </style>
+  <header>
+    <nav>
+        <div class="logo"><a href="/">My Blog</a></div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/catagories">Categories</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/blogs/create">New Blog</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <section class="create-blog-section">
+    <h1>Create New Blog Post</h1>
+    <p>Fill out the form below to create a new blog post and share your thoughts with the world.</p>
+
+    <div class="blog-form-container">
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="title">Blog Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Blog Content:</label>
+        <textarea id="content" name="content" rows="10" required></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="technology">Technology</option>
+          <option value="web-development">Web Development</option>
+          <option value="data-science">Data Science</option>
+          <option value="productivity">Productivity</option>
+          <option value="programming">Programming</option>
+          <option value="lifestyle">Lifestyle</option>
+        </select>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <button type="submit">Create Blog Post</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 My Blog | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
