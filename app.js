@@ -32,7 +32,7 @@ const blogs =[
     res.render('catagories',{title : 'home', blogs});
  })
 
- app.get('/blogs/create',(req,res)=>{
+ app.get('/craete',(req,res)=>{
     res.render('craete',{title : 'home', blogs});
  })
  app.get('/explore',(req,res)=>{

@@ -1,124 +1,134 @@
+/* General Styles */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+    }
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     line-height: 1.6;
-  }
-  
-  header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+    
+    header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
-  }
-  
-  nav {
+    }
+    nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .logo {
+    background-color: #333;
+    }
+    
+    .logo {
     font-size: 24px;
     font-weight: bold;
-  }
-  
-  .nav-links {
+    }
+    
+    .nav-links {
     list-style-type: none;
     display: flex;
     gap: 20px;
-  }
-  
-  .nav-links a {
+    }
+    
+    .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-  }
-  
-  .contact-section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-  }
-  
-  .contact-section h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .contact-section p {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 18px;
-  }
-  
-  .contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-  }
-  
-  .contact-form, .contact-info {
-    flex: 1;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .contact-form h2, .contact-info h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .contact-form form {
+    }
+header h1 {
+    margin: 0;
+}
+
+.blog-form-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-  
-  .contact-form label {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .contact-form button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+    gap: 1.5rem; 
+   align-items: center;
+   
+   
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly round the corners */
+    padding: 1.5rem; /* Increased padding for a more spacious look */
+    background-color: #f7f9fc; /* Light background for better contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem; /* Increase font size for emphasis */
+    padding: 0 10px;
+    color: #007bff; /* Change legend text color for better visibility */
+}
+
+/* Form Elements */
+label {
+    margin-bottom: 0.9rem;
+    font-weight: bold;
+    color: #333; /* Darker color for better contrast */
+}
+
+input[type="text"],
+input[type="file"],
+textarea,
+select {
+    margin-bottom: 0.5rem; /* Reduced bottom margin for spacing */
+    padding: 0.9rem; /* Increased padding for better touch targets */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    padding: 0.7rem;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
-  }
-  
-  .contact-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  footer {
+    transition: background-color 0.3s, transform 0.2s; /* Add scale on hover */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02); /* Slightly enlarge button on hover */
+}
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
-  }
-  
-  
+    margin-top: auto;
+    }
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .create-blog-section {
+        padding: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
