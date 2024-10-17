@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/index.css">
   </head>
 <%- include('./partials/head.ejs') %>
 <body>
@@ -26,8 +26,11 @@
    <div>
     <% if (blogs.length > 0) { %>
       <% blogs.forEach(blog => { %>
-        <h3><%= blog.title %></h3>
-        <p><%= blog.snippet %></p>
+        <a class="single" href="/blogs/<%= blog._id %>">
+          <h3><%= blog.title %></h3>
+          <p><%= blog.snippet %></p>
+        </a>
+       
       <% }) %>
     <% } else { %> <!-- Opening else tag -->
       <p>There are no blogs to display......</p> <!-- Fixed case of <p> -->

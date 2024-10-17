@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/details.css"> <!-- Ensure this path is correct -->
+</head>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs') %>
+    </header>
+
+    <div>
+        <h2><%= blog.title %></h2>
+        <div class="content">
+            <p><%= blog.body %></p>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
