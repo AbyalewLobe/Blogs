@@ -5,8 +5,17 @@
   <head>
     <link rel="stylesheet" href="/catagories.css">
   </head>
-  <header>
+  <header class="nor-nav">
     <%- include('./partials/nav.ejs') %>
+  </header>
+
+  <header class="midia-nav">
+    <nav>
+      <div class="toggle">☰</div>
+      <div class="nav-links">
+          <%- include('./partials/nav.ejs') %> <!-- Ensure nav.ejs has links -->
+      </div>
+    </nav>
   </header>
 
   <section class="categories-section">
@@ -16,41 +25,50 @@
     <div class="categories-container">
       <div class="category-card">
         <h2>Technology</h2>
-        <p>Discover the latest trends, tools, and breakthroughs in the tech world.</p>
+       
         <a href="explore">Explore Technology</a>
       </div>
 
       <div class="category-card">
         <h2>Web Development</h2>
-        <p>Learn about HTML, CSS, JavaScript, and modern web development techniques.</p>
+       
         <a href="explore">Explore Web Development</a>
       </div>
 
       <div class="category-card">
         <h2>Data Science</h2>
-        <p>Dive deep into the world of data analysis, machine learning, and AI.</p>
+        
         <a href="explore">Explore Data Science</a>
       </div>
 
       <div class="category-card">
         <h2>Productivity</h2>
-        <p>Tips and strategies to help you stay productive and manage your time effectively.</p>
+        
         <a href="explore">Explore Productivity</a>
       </div>
 
       <div class="category-card">
         <h2>Programming</h2>
-        <p>Explore tutorials, tips, and challenges in various programming languages.</p>
+        
         <a href="explore">Explore Programming</a>
       </div>
 
       <div class="category-card">
         <h2>Lifestyle</h2>
-        <p>Find out about life hacks, self-care tips, and other personal development topics.</p>
+        
         <a href="explore">Explore Lifestyle</a>
       </div>
     </div>
   </section>
   <%- include('./partials/footer.ejs') %>
+  <script>
+    // JavaScript to toggle the navigation on smaller screens
+    const toggle = document.querySelector('.toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

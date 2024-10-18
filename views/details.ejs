@@ -5,17 +5,53 @@
     <link rel="stylesheet" href="/details.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <header>
+    <header class="nor-nav">
         <%- include('./partials/nav.ejs') %>
-    </header>
+      </header>
+    
+      <header class="midia-nav">
+        <nav>
+          <div class="toggle">☰</div>
+          <div class="nav-links">
+              <%- include('./partials/nav.ejs') %> <!-- Ensure nav.ejs has links -->
+          </div>
+        </nav>
+      </header>
 
-    <div>
-        <h2><%= blog.title %></h2>
-        <div class="content">
-            <p><%= blog.body %></p>
+    <div class="details content">
+        <div href="" class="blogs">
+            <h2><%= blog.title %></h2>
+            <div class="content">
+                <p><%= blog.body %></p>
+            </div>
         </div>
+        
+        <a href="" class="delete" data-doc="<%= blog._id %>">Delete</a>
     </div>
 
     <%- include('./partials/footer.ejs') %>
 </body>
+
+<script>
+   const trashcan = document.querySelector('a.delete');
+
+trashcan.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+
+    const endpoint = `/blogs/${trashcan.dataset.doc}`; // Use backticks here
+
+    fetch(endpoint, {
+        method: 'DELETE'
+    })
+    .then((response) => response.json())
+    .then((data) => window.location.href = data.redirect)
+    .catch(err => console.log(err));
+});
+const toggle = document.querySelector('.toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 </html>

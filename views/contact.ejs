@@ -5,8 +5,17 @@
   <head>
     <link rel="stylesheet" href="/contact.css">
   </head>
-  <header>
+  <header class="nor-nav">
     <%- include('./partials/nav.ejs') %>
+  </header>
+
+  <header class="midia-nav">
+    <nav>
+      <div class="toggle">☰</div>
+      <div class="nav-links">
+          <%- include('./partials/nav.ejs') %> <!-- Ensure nav.ejs has links -->
+      </div>
+    </nav>
   </header>
 
   <section class="contact-section">
@@ -40,5 +49,14 @@
   </section>
 
   <%- include('./partials/footer.ejs') %>
+  <script>
+    // JavaScript to toggle the navigation on smaller screens
+    const toggle = document.querySelector('.toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

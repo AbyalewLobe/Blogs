@@ -32,6 +32,7 @@
     .logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left: 5%;
     }
     
     .nav-links {
@@ -50,7 +51,39 @@
     font-size: 48px;
     }
     
-    
+    .details{
+        position: relative;
+    }
+    .delete{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        border-radius: 50%;
+        padding: 8px;
+    }
+    .delete{
+        cursor: pointer;
+        box-shadow: 1px 2px 3px #77CDFF;
+    }
+    .content{
+       
+        margin-top: 30px;
+        margin-left: 30px;
+        align-content: start;
+
+    }
+
+    .blogs {
+        display: block;
+        margin: 40px 0;
+        padding-left: 30px;
+        border-left: 6px solid crimson;
+        position: relative;
+        left: 5%;
+    }
+    .blogs:hover{
+        color: crimson;
+    }
     
     
     
@@ -66,8 +99,36 @@
     padding: 10px;
     margin-top: auto;
     }
+    .toggle-all{
+        display: none;
+    }
+    .midia-nav{
+        display: none;
+    }
+    @media (max-width: 768px) {
+        nav .nav-links {
+            display: none; /* Hide links on small screens */
+            flex-direction: column;
+        }
     
+        nav .toggle {
+            display: block;
+            cursor: pointer;
+        }
     
+        nav.active .nav-links {
+            display: flex; /* Show links when nav is active */
+        }
+        .toggle{
+            position: relative;
+            right: -90%;
+            margin-left: 0;
+            display: block;
+        }
+        .midia-nav{
+            display: block;
+        }
+    }
     
     
     

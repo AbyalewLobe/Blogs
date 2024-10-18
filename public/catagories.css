@@ -28,6 +28,7 @@ margin: 0 auto;
 .logo {
 font-size: 24px;
 font-weight: bold;
+margin-left: 5%;
 }
 
 .nav-links {
@@ -106,3 +107,33 @@ text-align: center;
 padding: 10px;
 }
 
+.toggle-all{
+    display: none;
+}
+.midia-nav{
+    display: none;
+}
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hide links on small screens */
+        flex-direction: column;
+    }
+
+    nav .toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav.active .nav-links {
+        display: flex; /* Show links when nav is active */
+    }
+    .toggle{
+        position: relative;
+        right: -90%;
+        margin-left: 0;
+        display: block;
+    }
+    .midia-nav{
+        display: block;
+    }
+}

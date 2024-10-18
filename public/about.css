@@ -28,9 +28,12 @@ background-color: #333;
 .logo {
 font-size: 24px;
 font-weight: bold;
+margin-left: 5%;
+color: #fff;
 }
 
 .nav-links {
+    color: #fff;
 list-style-type: none;
 display: flex;
 gap: 20px;
@@ -85,3 +88,33 @@ text-align: center;
 padding: 10px;
 }
 
+.toggle-all{
+    display: none;
+}
+.midia-nav{
+    display: none;
+}
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hide links on small screens */
+        flex-direction: column;
+    }
+
+    nav .toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav.active .nav-links {
+        display: flex; /* Show links when nav is active */
+    }
+    .toggle{
+        position: relative;
+        right: -90%;
+        margin-left: 0;
+        display: block;
+    }
+    .midia-nav{
+        display: block;
+    }
+}

@@ -1,9 +1,10 @@
 const express = require('express')
  const morgan = require('morgan');
  const mongoose = require('mongoose');
- const Blog = require('./models/bolg');
- const multer = require('multer');
 
+ const multer = require('multer');
+const { result } = require('lodash');
+const blogRoutes = require('./Routes/blogRoutes')
  
  const app = express()
 
@@ -47,44 +48,7 @@ app.use(morgan('dev'));
  })
 
  //blog routs
- app.get('/blogs',(req,res)=>{
-   Blog.find().sort({createdAt: -1})
-      .then((result)=>{
-         res.render('index', {title: 'all blogs', blogs: result})
-      })
-      .catch((err)=>{
-         console.log(err);
-      })
- });
-
- app.post('/craete',(req,res)=>{
-   const blog = new Blog(req.body);
-
-   blog.save()
-      .then((result)=>{
-         res.redirect('/blogs');
-      })
-      .catch((err)=>{
-         console.log(err);
-      })
- });
-
- app.get('/blogs/:id', (req, res) => {
-   const id = req.params.id;
-   Blog.findById(id)
-       .then(result => {
-           if (result) {
-               res.render('details', { blog: result, title: 'Blog Details' });
-           } else {
-               res.status(404).render('404', { title: 'Blog Not Found' });
-           }
-       })
-       .catch(err => {
-           console.log(err);
-           res.status(500).render('404', { title: 'Server Error' });
-       });
-});
-
+ app.use(blogRoutes);
 
  app.get('/contact',(req,res)=>{
     res.render('contact',{title : 'contact'});

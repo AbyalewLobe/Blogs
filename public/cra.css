@@ -32,6 +32,7 @@ body {
     .logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left: 5%;
     }
     
     .nav-links {
@@ -122,6 +123,12 @@ footer {
     padding: 10px;
     margin-top: auto;
     }
+    .toggle-all{
+        display: none;
+    }
+    .midia-nav{
+        display: none;
+    }
 /* Responsive Styles */
 @media (max-width: 600px) {
     .create-blog-section {
@@ -131,4 +138,27 @@ footer {
     button {
         font-size: 0.9rem;
     }
+    nav .nav-links {
+        display: none; /* Hide links on small screens */
+        flex-direction: column;
+    }
+
+    nav .toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav.active .nav-links {
+        display: flex; /* Show links when nav is active */
+    }
+    .toggle{
+        position: relative;
+        right: -90%;
+        margin-left: 0;
+        display: block;
+    }
+    .midia-nav{
+        display: block;
+    }
 }
+

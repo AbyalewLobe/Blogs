@@ -5,8 +5,17 @@
   <head>
     <link rel="stylesheet" href="/explore.css">
   </head>
-  <header>
+  <header class="nor-nav">
     <%- include('./partials/nav.ejs') %>
+  </header>
+
+  <header class="midia-nav">
+    <nav>
+      <div class="toggle">☰</div>
+      <div class="nav-links">
+          <%- include('./partials/nav.ejs') %> <!-- Ensure nav.ejs has links -->
+      </div>
+    </nav>
   </header>
 
   <section class="category-section">
@@ -15,25 +24,15 @@
 
     <div class="posts-container">
       <div class="post-card">
-        <img src="tech-post-1.jpg" alt="Technology Post 1">
+        
         <h2>Latest Tech Trends in 2024</h2>
         <p>Stay updated with the latest tech trends that are shaping the future of the digital world...</p>
         <a href="#">Read More</a>
       </div>
 
-      <div class="post-card">
-        <img src="tech-post-2.jpg" alt="Technology Post 2">
-        <h2>Artificial Intelligence in Modern Industry</h2>
-        <p>AI is revolutionizing industries. Learn how it's being applied across different sectors...</p>
-        <a href="#">Read More</a>
-      </div>
+      
 
-      <div class="post-card">
-        <img src="tech-post-3.jpg" alt="Technology Post 3">
-        <h2>Top Gadgets for Tech Enthusiasts</h2>
-        <p>Discover the must-have gadgets of the year that every tech enthusiast needs to know about...</p>
-        <a href="#">Read More</a>
-      </div>
+     
 
       <!-- Add more posts as needed -->
 
@@ -42,4 +41,13 @@
 
   <%- include('./partials/footer.ejs') %>
 </body>
+<script>
+  // JavaScript to toggle the navigation on smaller screens
+  const toggle = document.querySelector('.toggle');
+  const nav = document.querySelector('nav');
+
+  toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+  });
+</script>
 </html>
