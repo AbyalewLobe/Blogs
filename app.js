@@ -8,7 +8,7 @@ const blogRoutes = require('./Routes/blogRoutes')
  
  const app = express()
 
-//  CONNECT TO MONGODB 
+//  CONNECT TO MONGODB
 const dbURL = 'mongodb+srv://Abyalew:Abyalew12@abyalew.rp0tl.mongodb.net/node-tut?retryWrites=true&w=majority';
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -18,10 +18,6 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     });
   })
   .catch((err) => console.log(err));
-
-
-
-
 
 
 
