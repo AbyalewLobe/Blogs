@@ -12,12 +12,7 @@ const blog_index = (req,res)=>{
       });
 }
 
-
-
-
-
-
-
+// blog details
 const blog_details =(req,res)=>{
     const id = req.params.id;
    Blog.findById(id)
